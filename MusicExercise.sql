@@ -7,7 +7,7 @@ FROM Genre;
 --2. Query all the entries in the Artist table and order by the artist's name. HINT: use the ORDER BY keywords
 SELECT 
 	Id,
-	ArtistName
+	ArtistName,
 	YearEstablished
 FROM Artist
 ORDER BY ArtistName;
@@ -21,5 +21,9 @@ LEFT JOIN Artist a on s.ArtistId = a.id;
 
 --4. Write a SELECT query that lists all the Artists that have a Pop Album
 SELECT 
-	
-FROM Artist 
+	artist.ArtistName
+FROM Artist artist
+JOIN Album album ON artist.id = album.ArtistId 
+JOIN Genre g ON album.GenreId = g.Id
+WHERE g.Label = pop;
+
