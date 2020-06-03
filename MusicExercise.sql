@@ -54,7 +54,8 @@ INSERT INTO SONG (Title, SongLength, ReleaseDate, GenreId, ArtistId, AlbumId) VA
 --10. Write a SELECT query that provides the song titles, album title, and artist name for all of the data you just entered in. 
 --Use the LEFT JOIN keyword sequence to connect the tables, and the WHERE keyword to filter the results to the album and artist you added.
 SELECT 
-	album.Title
+	album.Title, s.Title, artist.ArtistName
 FROM Album album
-LEFT JOIN Song s ON album.id = s.AlbumId
-WHERE s.AlbumId IS NULL;
+LEFT JOIN Song s ON s.AlbumID = album.Id
+LEFT JOIN Artist artist ON artist.Id = s.ArtistId
+WHERE s.AlbumId = 1005;
