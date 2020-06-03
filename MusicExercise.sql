@@ -46,3 +46,7 @@ WHERE s.AlbumId IS NULL;
 --7. Using the INSERT statement, add one of your favorite artists to the Artist table.
 INSERT INTO Artist (ArtistName, YearEstablished) VALUES ('Fall Out Boy', '2001');
 
+--8. Using the INSERT statement, add one, or more, albums by your artist to the Album table.
+INSERT INTO Album (Title, ReleaseDate, AlbumLength, [Label], ArtistId, GenreId) VALUES ('From Under the Cork Tree', '05/03/2005', 43, 'BMG Direct Marketing, Inc.', 1005, 2);
+
+
