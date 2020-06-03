@@ -25,5 +25,23 @@ SELECT
 FROM Artist artist
 JOIN Album album ON artist.id = album.ArtistId 
 JOIN Genre g ON album.GenreId = g.Id
-WHERE g.Label = pop;
+WHERE g.Label = 'Pop';
 
+--5. Write a SELECT query that lists all the Artists that have a Jazz or Rock Album
+SELECT 
+	artist.ArtistName
+FROM Artist artist
+JOIN Album album ON artist.id = album.ArtistId 
+JOIN Genre g ON album.GenreId = g.Id
+WHERE g.Label = 'Jazz' OR g.Label = 'Rock';
+
+
+--6. Write a SELECT statement that lists the Albums with no songs
+SELECT 
+	album.Title
+FROM Album album
+LEFT JOIN Song s ON album.id = s.AlbumId
+WHERE s.AlbumId IS NULL;
+
+--7. Using the INSERT statement, add one of your favorite artists to the Artist table.
+--INSERT INTO Artist (ArtistName) VALUES ('Fall Out Boy') AND Artist (YearEstablished) VALUES ('2001');
