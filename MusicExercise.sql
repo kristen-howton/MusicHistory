@@ -44,4 +44,4 @@ LEFT JOIN Song s ON album.id = s.AlbumId
 WHERE s.AlbumId IS NULL;
 
 --7. Using the INSERT statement, add one of your favorite artists to the Artist table.
---INSERT INTO Artist (ArtistName) VALUES ('Fall Out Boy') AND Artist (YearEstablished) VALUES ('2001');
+INSERT INTO Artist (ArtistName, YearEstablished) VALUES ('Fall Out Boy', 2001);
