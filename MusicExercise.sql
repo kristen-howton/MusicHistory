@@ -54,8 +54,18 @@ INSERT INTO SONG (Title, SongLength, ReleaseDate, GenreId, ArtistId, AlbumId) VA
 --10. Write a SELECT query that provides the song titles, album title, and artist name for all of the data you just entered in. 
 --Use the LEFT JOIN keyword sequence to connect the tables, and the WHERE keyword to filter the results to the album and artist you added.
 SELECT 
-	album.Title, s.Title, artist.ArtistName
+	album.Title, 
+	s.Title, 
+	artist.ArtistName
 FROM Album album
-LEFT JOIN Song s ON s.AlbumID = album.Id
-LEFT JOIN Artist artist ON artist.Id = s.ArtistId
+JOIN Song s ON s.AlbumID = album.Id
+JOIN Artist artist ON artist.Id = s.ArtistId
 WHERE s.AlbumId = 1005;
+
+--11. Write a SELECT statement to display how many songs exist for each album. You'll need to use the COUNT() function and the GROUP BY keyword sequence.
+SELECT 
+	album.Title,
+	COUNT(s.Id) AS 'Song Count'
+FROM Album album
+JOIN Song s ON s.AlbumId = album.Id
+GROUP BY (album.Title);
