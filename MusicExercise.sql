@@ -35,7 +35,6 @@ JOIN Album album ON artist.id = album.ArtistId
 JOIN Genre g ON album.GenreId = g.Id
 WHERE g.Label = 'Jazz' OR g.Label = 'Rock';
 
-
 --6. Write a SELECT statement that lists the Albums with no songs
 SELECT 
 	album.Title
@@ -49,4 +48,8 @@ INSERT INTO Artist (ArtistName, YearEstablished) VALUES ('Fall Out Boy', '2001')
 --8. Using the INSERT statement, add one, or more, albums by your artist to the Album table.
 INSERT INTO Album (Title, ReleaseDate, AlbumLength, [Label], ArtistId, GenreId) VALUES ('From Under the Cork Tree', '05/03/2005', 43, 'BMG Direct Marketing, Inc.', 1005, 2);
 
+--9. Using the INSERT statement, add some songs that are on that album to the Song table.
+INSERT INTO SONG (Title, SongLength, ReleaseDate, GenreId, ArtistId, AlbumId) VALUES ('Our Lawyer Made Us Change the Name', 3, '05/03/2005', 2, 1005, 1005);
 
+--10. Write a SELECT query that provides the song titles, album title, and artist name for all of the data you just entered in. 
+--Use the LEFT JOIN keyword sequence to connect the tables, and the WHERE keyword to filter the results to the album and artist you added.
