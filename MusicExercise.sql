@@ -69,3 +69,11 @@ SELECT
 FROM Album album
 JOIN Song s ON s.AlbumId = album.Id
 GROUP BY (album.Title);
+
+--12. Write a SELECT statement to display how many songs exist for each artist. You'll need to use the COUNT() function and the GROUP BY keyword sequence.
+SELECT 
+	artist.ArtistName,
+	COUNT(s.Id) AS 'Song Count'
+FROM Artist artist
+JOIN Song s ON s.ArtistId = artist.Id
+GROUP BY (artist.Title);
